@@ -1,10 +1,12 @@
 #include <ncurses.h>
 #include <string>
 #include <vector>
-#include "LMenuItem"
+//#include "LMenuItem.h"
 #define MAX_STRING_LEN 80
 #ifndef LMENU_H
 #define LMENU_H
+
+using namespace std; 
 
 class LMenu
 {
@@ -16,10 +18,10 @@ class LMenu
 		int length;			// horizontal length 
 		int height;			// vertical height
 
-		char title[MAX_STRING_LEN];	// title of menu
+		string title;		// title of menu
 
 		int itemCount;		// number of menu items
-		vector<LMenuItem> items;
+//		vector<LMenuItem> items;
 		int selecetedItem;	// index of selected item
 
 		int isSelected;		// 0 or 1, boolean for whether key presses work or not
@@ -32,7 +34,7 @@ class LMenu
 
 		LMenu();
 		LMenu(int x_coord, int y_coord, int len, int h, string t, int iCount, LMenu *r, LMenu *l);
-		void setVals(int x_coord, int y_coord, int len, int h, string t, int iCount, LMenu *r, LMenu *l)
+		void setVals(int x_coord, int y_coord, int len, int h, string t, int iCount, LMenu *r, LMenu *l);
 		void updateMenu();
 		void enable();
 		void disable();

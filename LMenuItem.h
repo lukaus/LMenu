@@ -1,9 +1,20 @@
+// Luke Stanley
+
+#include <ncurses.h>
+#include <string>
+#include "LMenu.h"
+
+#ifndef LMENUITEM_H
+#define LMENUITEM_H
+using namespace std;
+
 class LMenuItem
 {
 	private:
-		char text[MAX_STRING_LEN];
+		string text;
 		LMenu *within;
 	public:
-		LMenuItem(LMenu *w, char *t, void (*invoke_func)());
+		LMenuItem(LMenu *w, string t, void (*invoke_func)());
 		void (*invoke)();
 };
+#endif

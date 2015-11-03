@@ -6,9 +6,11 @@
 #include "LMenu.h"
 #include <vector>
 
+using namespace std;
+
 LMenu::LMenu()
 {
-	setVals(0, 0, 0, 0, "null", 0, void, void);	
+	setVals(0, 0, 0, 0, "null", 0, NULL, NULL);	
 }
 
 LMenu::LMenu(int x_coord, int y_coord, int len, int h, string t, int iCount, LMenu *r, LMenu *l)
@@ -30,17 +32,17 @@ void LMenu::setVals(int x_coord, int y_coord, int len, int h, string t, int iCou
 	right = l;
 }
 
-void LMenu::disable_func()
+void LMenu::disable()
 {
 	isSelected = FALSE;
 }
 
-void LMenu::enable_func()
+void LMenu::enable()
 {
 	isSelected = TRUE;
 }
 
-void LMenu::updateMenu_func()
+void LMenu::updateMenu()
 {
 
 }
