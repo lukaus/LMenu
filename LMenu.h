@@ -1,5 +1,5 @@
 #include <ncurses.h>
-#include <string.h>
+#include <string>
 #include <vector>
 #include "LMenuItem"
 #define MAX_STRING_LEN 80
@@ -31,8 +31,8 @@ class LMenu
 	public:
 
 		LMenu();
-		LMenu(int x_coord, int y_coord, int len, int h, char *t, int iCount, LMenu *r, LMenu *l);
-		void setVals(int x_coord, int y_coord, int len, int h, char *t, int iCount, LMenu *r, LMenu *l)
+		LMenu(int x_coord, int y_coord, int len, int h, string t, int iCount, LMenu *r, LMenu *l);
+		void setVals(int x_coord, int y_coord, int len, int h, string t, int iCount, LMenu *r, LMenu *l)
 		void updateMenu();
 		void enable();
 		void disable();
